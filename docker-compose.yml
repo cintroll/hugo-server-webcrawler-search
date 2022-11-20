@@ -1,0 +1,12 @@
+services:
+  webcrawler:
+    build: webcrawler
+    # volumes:
+    #   - ./crawl:/opt/nutch/crawl
+    depends_on:
+      - indexer
+
+  indexer:
+    build: indexer
+    ports:
+      - 8983:8983
